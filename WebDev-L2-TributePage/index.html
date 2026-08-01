@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute to Dr. A.P.J. Abdul Kalam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">A.P.J. Abdul Kalam</div>
+        <ul class="nav-links">
+            <li><a href="#biography">Biography</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#quote">Quote</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </button>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-section" id="home">
+        <div class="hero-content">
+            <h1 class="animate-title">Dr. A.P.J. Abdul Kalam</h1>
+            <p class="animate-subtitle">Missile Man of India · Scientist · Teacher · 11th President of India</p>
+            <a href="#biography" class="cta-btn">Explore His Legacy</a>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="image/apj-kalam.jpg" alt="Dr. A.P.J. Abdul Kalam" class="hero-img">
+            <div class="image-glow"></div>
+        </div>
+    </header>
+
+    <!-- Biography -->
+    <section class="biography reveal" id="biography">
+        <h2>Biography</h2>
+        <div class="bio-content">
+            <p>
+                Dr. A.P.J. Abdul Kalam was born on 15 October 1931 in Rameswaram, Tamil Nadu. He came from a humble
+                family and worked hard throughout his life to achieve excellence in science and technology.
+            </p>
+            <p>
+                He joined the Defence Research and Development Organisation (DRDO) and later the Indian Space Research
+                Organisation (ISRO), where he played a major role in India's satellite launch vehicle and missile
+                development programs. His contributions earned him the title "Missile Man of India."
+            </p>
+            <p>
+                In 2002, Dr. Kalam became the 11th President of India. He was widely respected for his simplicity,
+                leadership, and dedication to education. He inspired millions of students to dream big and work hard to
+                achieve their goals.
+            </p>
+            <p>
+                Even after completing his presidency, he continued teaching and motivating young people across the
+                country. His life remains an inspiration to students, scientists, and future leaders around the world.
+            </p>
+        </div>
+    </section>
+
+    <!-- Timeline / Achievements -->
+    <section class="timeline reveal" id="achievements">
+        <h2>Major Achievements</h2>
+        <div class="timeline-container">
+            <div class="timeline-item" data-year="1931">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="year">1931</span>
+                    <p>Born in Rameswaram, Tamil Nadu.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-year="1960">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="year">1960</span>
+                    <p>Graduated in Aerospace Engineering from the Madras Institute of Technology.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-year="1969">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="year">1969</span>
+                    <p>Joined the Indian Space Research Organisation (ISRO).</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-year="1980">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="year">1980</span>
+                    <p>Successfully led the SLV-III project, placing the Rohini satellite into orbit.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-year="1998">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="year">1998</span>
+                    <p>Played a key role in India's Pokhran-II nuclear tests.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-year="2002">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="year">2002–2007</span>
+                    <p>Served as the 11th President of India.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-year="2015">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="year">2015</span>
+                    <p>Passed away while delivering a lecture at IIM Shillong, continuing his passion for teaching until his final moments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote reveal" id="quote">
+        <h2>Inspirational Quote</h2>
+        <blockquote id="quoteText">
+            "Dream, dream, dream. Dreams transform into thoughts and thoughts result in action."
+        </blockquote>
+        <p class="quote-author">— Dr. A.P.J. Abdul Kalam</p>
+        <button class="copy-btn" id="copyQuote">Copy Quote</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Designed by Mohammed Shihan | Oasis Infobyte Level 2 Task 2</p>
+        <p class="footer-note">In memory of the Missile Man who taught a nation to dream</p>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
