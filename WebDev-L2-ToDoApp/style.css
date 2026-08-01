@@ -1,0 +1,527 @@
+:root {
+    --primary: #0d47a1;
+    --primary-light: #1565c0;
+    --bg: #f0f4f8;
+    --card: #ffffff;
+    --text: #222;
+    --text-muted: #666;
+    --border: #e0e0e0;
+    --section-bg: #f8fafc;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --section-bg: #1e293b;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --primary: #3b82f6;
+    --primary-light: #60a5fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 30px 15px;
+    display: flex;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    width: 100%;
+    max-width: 980px;
+    background: var(--card);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+/* Header */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--primary);
+    font-size: 1.9rem;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.theme-btn {
+    background: none;
+    border: 2px solid var(--border);
+    font-size: 1.3rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.theme-btn:hover {
+    border-color: var(--primary);
+    transform: rotate(20deg);
+}
+
+/* Progress Bar */
+.progress-container {
+    margin-bottom: 25px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.progress-bar {
+    height: 10px;
+    background: var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #43a047, #66bb6a);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#taskInput {
+    flex: 1;
+    min-width: 200px;
+    padding: 13px 16px;
+    font-size: 15px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    background: var(--card);
+    color: var(--text);
+    font-family: inherit;
+}
+
+#taskInput:focus {
+    border-color: var(--primary);
+}
+
+#prioritySelect,
+#dueDateInput {
+    padding: 12px 14px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--text);
+    font-family: inherit;
+    cursor: pointer;
+}
+
+#addTaskBtn {
+    padding: 13px 26px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+#addTaskBtn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#searchInput {
+    flex: 1;
+    min-width: 180px;
+    padding: 11px 16px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: var(--primary);
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    border: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Task Sections */
+.task-container {
+    display: flex;
+    gap: 22px;
+}
+
+.section {
+    flex: 1;
+    background: var(--section-bg);
+    padding: 20px;
+    border-radius: 14px;
+    min-height: 300px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.clear-btn {
+    background: #ef5350;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.clear-btn:hover {
+    background: #e53935;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: var(--card);
+    margin-bottom: 12px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeIn 0.35s ease;
+    border-left: 5px solid transparent;
+    transition: transform 0.2s;
+}
+
+li:hover {
+    transform: translateY(-2px);
+}
+
+li.priority-high {
+    border-left-color: #e53935;
+}
+
+li.priority-medium {
+    border-left-color: #fb8c00;
+}
+
+li.priority-low {
+    border-left-color: #43a047;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.task-text {
+    flex: 1;
+    word-break: break-word;
+    font-size: 15px;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.task-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 12px;
+}
+
+.badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    color: white;
+}
+
+.badge.high {
+    background: #e53935;
+}
+
+.badge.medium {
+    background: #fb8c00;
+}
+
+.badge.low {
+    background: #43a047;
+}
+
+.due-date {
+    color: var(--text-muted);
+}
+
+.due-date.overdue {
+    color: #e53935;
+    font-weight: 600;
+}
+
+.actions {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.actions button {
+    border: none;
+    padding: 6px 11px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.25s;
+}
+
+.complete-btn {
+    background: #43a047;
+    color: white;
+}
+
+.complete-btn:hover {
+    background: #388e3c;
+}
+
+.undo-btn {
+    background: #fb8c00;
+    color: white;
+}
+
+.undo-btn:hover {
+    background: #ef6c00;
+}
+
+.edit-btn {
+    background: #1e88e5;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #1565c0;
+}
+
+.delete-btn {
+    background: #e53935;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #c62828;
+}
+
+.empty-msg {
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: 50px;
+    font-size: 15px;
+    display: none;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--card);
+    padding: 28px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h3 {
+    margin-bottom: 18px;
+    color: var(--primary);
+}
+
+#editTaskText {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    background: var(--card);
+    color: var(--text);
+    font-family: inherit;
+}
+
+.modal-row {
+    margin-bottom: 15px;
+}
+
+.modal-row label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.modal-row select,
+.modal-row input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--text);
+    font-family: inherit;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.save-btn,
+.cancel-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.save-btn {
+    background: var(--primary);
+    color: white;
+}
+
+.cancel-btn {
+    background: var(--border);
+    color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .task-container {
+        flex-direction: column;
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    #addTaskBtn,
+    #prioritySelect,
+    #dueDateInput {
+        width: 100%;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .filters {
+        width: 100%;
+        justify-content: center;
+    }
+}

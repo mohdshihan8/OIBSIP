@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Web App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-top">
+                <div>
+                    <h1>To-Do List</h1>
+                    <p class="subtitle">Stay organized & productive</p>
+                </div>
+                <button id="themeToggle" class="theme-btn" title="Toggle Dark Mode">🌙</button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span>Progress</span>
+                    <span id="progressText">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="What do you need to do?" autocomplete="off">
+
+            <select id="prioritySelect">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+
+            <input type="date" id="dueDateInput">
+
+            <button id="addTaskBtn">Add Task</button>
+        </div>
+
+        <!-- Search + Filters -->
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search tasks...">
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+        </div>
+
+        <!-- Task Sections -->
+        <div class="task-container">
+            <!-- Pending -->
+            <div class="pending section">
+                <div class="section-header">
+                    <h2>Pending Tasks (<span id="pendingCount">0</span>)</h2>
+                </div>
+                <ul id="pendingList"></ul>
+                <p class="empty-msg" id="pendingEmpty">No pending tasks 🎉</p>
+            </div>
+
+            <!-- Completed -->
+            <div class="completed section">
+                <div class="section-header">
+                    <h2>Completed Tasks (<span id="completedCount">0</span>)</h2>
+                    <button id="clearCompleted" class="clear-btn">Clear All</button>
+                </div>
+                <ul id="completedList"></ul>
+                <p class="empty-msg" id="completedEmpty">No completed tasks yet</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <h3>Edit Task</h3>
+            <input type="text" id="editTaskText" placeholder="Task name">
+
+            <div class="modal-row">
+                <label>Priority</label>
+                <select id="editPriority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <div class="modal-row">
+                <label>Due Date</label>
+                <input type="date" id="editDueDate">
+            </div>
+
+            <div class="modal-actions">
+                <button id="saveEditBtn" class="save-btn">Save</button>
+                <button id="cancelEditBtn" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
