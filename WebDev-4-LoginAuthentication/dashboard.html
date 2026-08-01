@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+    
+
+<body>
+
+
+    <div class="container">
+
+        <div class="auth-box">
+
+            <h1>Dashboard</h1>
+
+            <p class="subtitle">
+                Welcome to your account
+            </p>
+
+
+            <h3 id="userEmail"></h3>
+
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+
+        const user = localStorage.getItem("loggedInUser");
+
+
+        if (!user) {
+
+            window.location.href = "index.html";
+
+        }
+
+
+        document.getElementById("userEmail").textContent =
+            "Logged in as: " + user;
+
+
+
+        document.getElementById("logoutBtn")
+            .addEventListener("click", function () {
+
+
+                localStorage.removeItem("loggedInUser");
+
+
+                window.location.href = "index.html";
+
+
+            });
+
+
+    </script>
+
+
+</body>
+
+</html>
